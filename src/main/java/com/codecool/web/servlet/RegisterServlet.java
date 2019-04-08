@@ -29,9 +29,8 @@ public class RegisterServlet extends HttpServlet {
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        boolean isMentor = Boolean.parseBoolean(req.getParameter("type"));
+        String isMentor = req.getParameter("type");
 
         userList.add(new User(name, email, password, isMentor));
-
     }
 }
