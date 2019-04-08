@@ -11,7 +11,8 @@ public class User {
         this.email = email;
         this.name = name;
         this.password = password;
-        if(type.equals("Student"))
+        if(type.equals("Student")){
+        }
     }
 
     public User(String email, String password, boolean isMentor) {

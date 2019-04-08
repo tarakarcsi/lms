@@ -18,6 +18,9 @@ public class RegisterServlet extends HttpServlet {
 
     private List<User> userList = new ArrayList<>();
 
+    public List<User> getUserList(){
+        return userList;
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

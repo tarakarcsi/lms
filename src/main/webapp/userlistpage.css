@@ -14,7 +14,7 @@ table caption {
   margin: .5em 0 .75em;
 }
 table tr {
-  border: 1px solid #ddd;
+  border: 1px solid #696969;
   padding: .35em;
 }
 table tr:nth-child(even) {
@@ -26,7 +26,7 @@ table td {
   text-align: left;
 }
 table th {
-  background: #999;
+  background: #545151;
   color: #fff;
   font-size: .85em;
   letter-spacing: .1em;
