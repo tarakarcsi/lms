@@ -21,7 +21,7 @@ table tr {
   padding: .35em;
 }
 table tr:nth-child(even) {
-  background: #f8f8f8;  
+  background: #f8f8f8;
 }
 table th,
 table td {
