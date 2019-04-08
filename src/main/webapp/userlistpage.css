@@ -1,6 +1,10 @@
+caption  {
+    color: white;
+}
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
+  background: url("fancy-cushion.png");
 }
 table {
   border: 1px solid #ccc;
@@ -32,6 +36,7 @@ table th {
   text-transform: uppercase;
 }
 table td {
+  background: #999;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
