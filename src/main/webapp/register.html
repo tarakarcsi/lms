@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Page</title>
+    <link rel="stylesheet" href="register.css">
 </head>
 <body>
   <header>
     <h1>Please Register</h1>
   </header>
-  <p>Please Enter your name</p>
-  <input type="text" placeholder="Firstname/Lastname"/>
-  <p>Please Enter your E-mail address</p>
-  <input type="email" placeholder="e-mail"/>
-  <p>Please select your status</p>
-  <select>
-  <option value="student">Student</option>
-  <option value="mentor">Mentor</option>
-  </select>
-  <button type="submit" value=>Register</button>
+  <form action="register">
+      <p>Please Enter your name</p>
+      <input type="text" placeholder="Firstname/Lastname"/>
+      <p>Please Enter your E-mail address</p>
+      <input type="email" placeholder="e-mail"/>
+      <p>Please select your status</p>
+      <select>
+      <option value="student">Student</option>
+      <option value="mentor">Mentor</option>
+      </select>
+      <button type="submit" value=>Register</button>
+  </form>
 </body>
 </html>
