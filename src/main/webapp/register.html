@@ -12,13 +12,20 @@
   <div class="center-box">
   <form action="register">
       <p>Enter your name:</p>
-      <input name = "name" type="text" placeholder="Name"/>
+      <input name = "name" type="text" placeholder="Name" required/>
       <p>Enter your e-mail address:</p>
-      <input name = "email" type="email" placeholder="E-mail"/>
+      <input name = "email" type="email" placeholder="E-mail" required/>
       <p>Enter your password:</p>
-      <input name = "password" type="password" placeholder="*****"/>
+      <input name = "password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="*****"/>
       <p>Confirm password:</p>
-      <input name = "password" type="password" placeholder="*****"/>
+      <input name = "password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required placeholder="*****"/>
+      <div id="message">
+          <h3>Password must contain the following:</h3>
+          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number" class="invalid">A <b>number</b></p>
+          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      </div>
       <p>Select your status:</p>
       <select name = "type">
         <option value="student">Student</option>
