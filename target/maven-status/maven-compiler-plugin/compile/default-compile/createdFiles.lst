@@ -1,1 +1,8 @@
 com/codecool/web/model/User.class
+com/codecool/web/servlet/RegisterServlet.class
+com/codecool/web/service/EmailService$1.class
+com/codecool/web/service/EmailService.class
+com/codecool/web/servlet/LoginServlet.class
+com/codecool/web/service/Serializer.class
+com/codecool/web/service/CheckFunctions.class
+com/codecool/web/servlet/UserServlet.class

@@ -1,6 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.User;
+import com.codecool.web.service.EmailService;
 import com.codecool.web.service.Serializer;
 
 import javax.servlet.ServletException;
@@ -20,6 +21,7 @@ import java.util.List;
 public class RegisterServlet extends HttpServlet {
     private List<User> userList = new ArrayList<>();
     private Serializer serializer = new Serializer();
+    private EmailService es = new EmailService();
 
 
     public List<User> getUserList(){
@@ -35,11 +37,12 @@ public class RegisterServlet extends HttpServlet {
         String password1 = req.getParameter("password1");
         String password2 = req.getParameter("password2");
         String isMentor = req.getParameter("type");
-        userList.add(new User("test@test.com", "test", "Q12345678x", "Q12345678x", "MENTOR"));
+        userList.add(new User("tarakarcsi94@gmail.com", "test", "Q12345678x", "Q12345678x", "MENTOR"));
         User testUser = userList.get(0);
         if(testUser.getPassword().equals(testUser.getPassword2())) {
             userList.add(new User(name, email, password1, password2, isMentor));
             resp.sendRedirect("login.html");
+            es.sendEmail(testUser);
         }else{
             req.setAttribute("error", "error");
             req.getRequestDispatcher("register.jsp").forward(req, resp);
