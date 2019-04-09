@@ -7,21 +7,25 @@
 </head>
 <body>
   <header>
-    <h1>Please Register</h1>
+    <h1>Register</h1>
   </header>
+  <div class="center-box">
   <form action="register">
-      <p>Please Enter your name</p>
-      <input name = "name" type="text" placeholder="Firstname/Lastname"/>
-      <p>Please Enter your E-mail address</p>
-      <input name = "email"type="email" placeholder="e-mail"/>
-      <p>Please Enter your Password</p>
+      <p>Enter your name:</p>
+      <input name = "name" type="text" placeholder="Name"/>
+      <p>Enter your e-mail address:</p>
+      <input name = "email" type="email" placeholder="E-mail"/>
+      <p>Enter your password:</p>
       <input name = "password" type="password" placeholder="*****"/>
-      <p>Please select your status</p>
+      <p>Confirm password:</p>
+      <input name = "password" type="password" placeholder="*****"/>
+      <p>Select your status:</p>
       <select name = "type">
         <option value="student">Student</option>
         <option value="mentor">Mentor</option>
-      </select>
-      <button type="submit" value=>Register</button>
+      </select><br/>
+      <button type="submit">Register</button>
   </form>
+</div>
 </body>
 </html>
