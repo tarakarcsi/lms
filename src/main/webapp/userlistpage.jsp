@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <%@ page import="java.util.List" %>
+    <--!<%@ page import="java.util.List" %>
     <%@ page import="com.codecool.web.model.User" %>
     <% List<User> users = (List<User>) request.getAttribute("users"); %>
         <% for(User user: users) { %>
@@ -29,8 +29,8 @@
             <td>Student</td>
             <}%>
         </tr>
-        <% } %>
-    <!--<tr>
+        <% } %>-->
+    <tr>
         <td scope="row">Sheldon Cooper</td>
         <td>lhofstadter@caltech.edu</td>
         <td>Student</td>
@@ -59,7 +59,7 @@
         <td scope="row">Amy Farrah Fowler</td>
         <td>lhofstadter@caltech.edu</td>
         <td>Student</td>
-    </tr>-->
+    </tr>
     </tbody>
 </table>
 </body>

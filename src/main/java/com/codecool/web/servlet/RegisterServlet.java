@@ -1,6 +1,7 @@
 package com.codecool.web.servlet;
 
 import com.codecool.web.model.User;
+import com.codecool.web.service.Serializer;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,14 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
-
     private List<User> userList = new ArrayList<>();
+    private Serializer serializer = new Serializer();
 
     public List<User> getUserList(){
         return userList;
@@ -29,33 +32,37 @@ public class RegisterServlet extends HttpServlet {
         resp.setContentType("text/html");
         String name = req.getParameter("name");
         String email = req.getParameter("email");
-        String password = req.getParameter("password");
+        String password1 = req.getParameter("password1");
+        String password2 = req.getParameter("password2");
         String isMentor = req.getParameter("type");
 
-        userList.add(new User(name, email, password, isMentor));
-    }
+        if(password1.equals(password2)) {
+            userList.add(new User(name, email, password1, isMentor));
+            resp.sendRedirect("login");
+        }else{
+            req.setAttribute("error", "YOU SUCK");
+            req.getRequestDispatcher("register.jsp").forward(req, resp);
+        }
 
-    public void saveUser() throws IOException{
-        FileOutputStream foS = new FileOutputStream("./users.ser");
-        ObjectOutputStream oos = new ObjectOutputStream(foS);
-        oos.writeObject(userList);
-        oos.close();
-        foS.close();
+
     }
 
     public void save() {
         try{
-            saveUser();
+            serializer.saveUser(userList);
             System.out.println("User saved.");
         }catch (IOException io) {
             System.out.println(io.getMessage());
         }
     }
 
-    public static void main(String[] args) {
+    public void add(){
+        userList.add(new User("test", "test@test.hu", "Q12345678x", "MENTOR"));
+    }
 
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         RegisterServlet rs = new RegisterServlet();
-        rs.save();
-
+        Serializer ser = new Serializer();
+        ser.readSer();
     }
 }
