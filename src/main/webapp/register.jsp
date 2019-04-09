@@ -33,6 +33,8 @@
       </select><br/>
       <button type="submit">Register</button>
   </form>
-</div>
+      <% out.println("SHIT"); %>
+      <h1 style="color: red;">${error}</h1>
+  </div>
 </body>
 </html>

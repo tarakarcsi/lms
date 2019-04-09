@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -21,6 +20,7 @@ import java.util.List;
 public class RegisterServlet extends HttpServlet {
     private List<User> userList = new ArrayList<>();
     private Serializer serializer = new Serializer();
+
 
     public List<User> getUserList(){
         return userList;
@@ -35,16 +35,15 @@ public class RegisterServlet extends HttpServlet {
         String password1 = req.getParameter("password1");
         String password2 = req.getParameter("password2");
         String isMentor = req.getParameter("type");
-
-        if(password1.equals(password2)) {
-            userList.add(new User(name, email, password1, isMentor));
-            resp.sendRedirect("login");
+        userList.add(new User("test@test.com", "test", "Q12345678x", "Q12345678x", "MENTOR"));
+        User testUser = userList.get(0);
+        if(testUser.getPassword().equals(testUser.getPassword2())) {
+            userList.add(new User(name, email, password1, password2, isMentor));
+            resp.sendRedirect("login.html");
         }else{
-            req.setAttribute("error", "YOU SUCK");
+            req.setAttribute("error", "error");
             req.getRequestDispatcher("register.jsp").forward(req, resp);
         }
-
-
     }
 
     public void save() {
@@ -56,9 +55,9 @@ public class RegisterServlet extends HttpServlet {
         }
     }
 
-    public void add(){
+    /*public void add(){
         userList.add(new User("test", "test@test.hu", "Q12345678x", "MENTOR"));
-    }
+    }*/
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         RegisterServlet rs = new RegisterServlet();

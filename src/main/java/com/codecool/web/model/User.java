@@ -7,12 +7,14 @@ public class User implements Serializable {
     private String email;
     private String name;
     private String password;
+    private String password2;
     private boolean isMentor;
 
-    public User(String email, String name, String password, String type) {
+    public User(String email, String name, String password, String password2, String type) {
         this.email = email;
         this.name = name;
         this.password = password;
+        this.password2 = password2;
         if(type.equals("student"))
             this.isMentor = false;
         else
@@ -23,6 +25,10 @@ public class User implements Serializable {
         this.email = email;
         this.password = password;
         this.isMentor = isMentor;
+    }
+
+    public String getPassword2() {
+        return password2;
     }
 
     public String getEmail() {
