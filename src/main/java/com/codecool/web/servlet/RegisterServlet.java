@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -31,10 +32,19 @@ public class RegisterServlet extends HttpServlet {
         resp.setContentType("text/html");
         String name = req.getParameter("name");
         String email = req.getParameter("email");
-        String password = req.getParameter("password");
+        String password1 = req.getParameter("password1");
+        String password2 = req.getParameter("password2");
         String isMentor = req.getParameter("type");
 
-        userList.add(new User(name, email, password, isMentor));
+        if(password1.equals(password2)) {
+            userList.add(new User(name, email, password1, isMentor));
+            resp.sendRedirect("login");
+        }else{
+            req.setAttribute("error", "YOU SUCK");
+            req.getRequestDispatcher("register.jsp").forward(req, resp);
+        }
+
+
     }
 
     public void save() {
