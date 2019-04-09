@@ -3,9 +3,8 @@ package com.codecool.web.service;
 import com.codecool.web.model.User;
 import com.codecool.web.servlet.RegisterServlet;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Serializer {
@@ -17,5 +16,18 @@ public class Serializer {
         oos.close();
         foS.close();
     }
-
+    @SuppressWarnings("unchecked")
+    public List<User> readSer() throws IOException, ClassNotFoundException {
+        try {
+            FileInputStream fiS = new FileInputStream("./users.ser");
+            ObjectInputStream ois = new ObjectInputStream(fiS);
+            List<User> users = (List<User>) ois.readObject();
+            ois.close();
+            fiS.close();
+            return users;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

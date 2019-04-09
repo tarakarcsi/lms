@@ -17,8 +17,7 @@ import java.util.List;
 
 
 @WebServlet("/register")
-public class RegisterServlet extends HttpServlet implements Serializable {
-
+public class RegisterServlet extends HttpServlet {
     private List<User> userList = new ArrayList<>();
     private Serializer serializer = new Serializer();
 
@@ -45,5 +44,15 @@ public class RegisterServlet extends HttpServlet implements Serializable {
         }catch (IOException io) {
             System.out.println(io.getMessage());
         }
+    }
+
+    public void add(){
+        userList.add(new User("test", "test@test.hu", "Q12345678x", "MENTOR"));
+    }
+
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        RegisterServlet rs = new RegisterServlet();
+        Serializer ser = new Serializer();
+        ser.readSer();
     }
 }
