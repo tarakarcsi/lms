@@ -4,18 +4,27 @@ body {
   background: url("image.png");
 }
 table {
-  border: 1px solid #ccc;
+  margin: 0 auto;
+  border: 2px solid #ccc;
   border-collapse: collapse;
   table-layout: fixed;
-  width: 100%;
+  width: 80%;
 }
 table caption {
-  font-size: 1.5em;
-  margin: .5em 0 .75em;
+  font-size: 48px;
+  color: #545151;
+  border-bottom: 2px solid gray;
+  border-top: 2px solid gray;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: verdana;
+  margin: 20px auto;
+  text-align: center;
+  width: 30%;
 }
 table tr {
   border: 1px solid #696969;
-  padding: .35em;
+  padding: 16px;
 }
 table tr:nth-child(even) {
   background: #f8f8f8;
@@ -28,9 +37,11 @@ table td {
 table th {
   background: #545151;
   color: #fff;
-  font-size: .85em;
+  font-size: 18px;
+  font-weight: bold;
   letter-spacing: .1em;
   text-transform: uppercase;
+  margin-top: 20px;
 }
 table td {
   background: #999;
