@@ -18,12 +18,13 @@ public class LoginServlet extends HttpServlet {
 
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
 
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String type = req.getParameter("type");
+        resp.sendRedirect("welcome.html");
 
     }
 }
