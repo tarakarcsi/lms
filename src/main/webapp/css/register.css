@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background: #000 url(background.jpg) top center no-repeat;
+    background: url(background.jpg) top center no-repeat;
     color: #fff;
     background-size: cover;
     font-family: Verdana;
@@ -89,3 +89,4 @@ select {
     color: #000;
     padding: 10px;
 }
+
