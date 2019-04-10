@@ -16,20 +16,22 @@
     </tr>
     </thead>
     <tbody>
-    <--!<%@ page import="java.util.List" %>
+    <form action="user" method="post">
+    <%@ page import="java.util.List" %>
     <%@ page import="com.codecool.web.model.User" %>
     <% List<User> users = (List<User>) request.getAttribute("users"); %>
         <% for(User user: users) { %>
         <tr>
             <td scope="row"><%=user.getName()%></td>
             <td><%=user.getEmail()%></td>
-            <% if(user.getIsmentor()) { %>
+            <% if(user.isMentor()) { %>
             <td>Mentor</td>
             <%}else{ %>
             <td>Student</td>
-            <}%>
+            <%}%>
         </tr>
-        <% } %>-->
+        <% } %>
+    </form>
     <tr>
         <td scope="row">Sheldon Cooper</td>
         <td>lhofstadter@caltech.edu</td>

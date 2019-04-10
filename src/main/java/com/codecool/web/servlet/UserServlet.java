@@ -15,9 +15,11 @@ public class UserServlet extends HttpServlet {
 
     RegisterServlet rS = new RegisterServlet();
     List<User> userList = rS.getUserList();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        System.out.println(userList);
         request.setAttribute("users", userList);
         request.getRequestDispatcher("userlistpage.jsp").forward(request, response);
     }

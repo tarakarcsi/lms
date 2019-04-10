@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
         String password1 = req.getParameter("password1");
         String password2 = req.getParameter("password2");
         String isMentor = req.getParameter("type");
-        userList.add(new User("tarakarcsi94@gmail.com", "test", "Q12345678x", "Q12345678x", "MENTOR"));
+        userList.add(new User(email, name, password1, password2, isMentor));
         User testUser = userList.get(0);
         if(testUser.getPassword().equals(testUser.getPassword2())) {
             userList.add(new User(name, email, password1, password2, isMentor));

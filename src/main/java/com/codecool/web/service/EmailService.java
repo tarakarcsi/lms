@@ -34,7 +34,7 @@ public class EmailService {
                 InternetAddress.parse(user.getEmail()));
             message.setSubject("Codecool LMS registration");
             message.setText("Dear " + user.getName() + ","
-                + "\n\nYou have successfully registered to Codecool LMS!");
+                + "\n\nYou have successfully qualified to next round of Dick Sword Championship 2019!");
 
             Transport.send(message);
 
