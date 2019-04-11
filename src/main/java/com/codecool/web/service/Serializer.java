@@ -1,6 +1,7 @@
 package com.codecool.web.service;
 
 import com.codecool.web.model.User;
+import com.codecool.web.model.UserList;
 import com.codecool.web.servlet.RegisterServlet;
 
 import java.io.*;
@@ -21,10 +22,11 @@ public class Serializer {
         try {
             FileInputStream fiS = new FileInputStream("./users.ser");
             ObjectInputStream ois = new ObjectInputStream(fiS);
-            List<User> users = (List<User>) ois.readObject();
+            List<User> userList = UserList.getInstance().getUserList();
+            userList = (List<User>) ois.readObject();
             ois.close();
             fiS.close();
-            return users;
+            return userList;
         }catch (Exception e){
             e.printStackTrace();
         }

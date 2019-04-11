@@ -47,6 +47,7 @@ public class RegisterServlet extends HttpServlet {
         if(password1.equals(password2)) {
             UserList.getInstance().addUser(new User(name, email, password1, password2, isMentor));
             resp.sendRedirect("login.html");
+            save();
             //es.sendEmail();
         }else{
             req.setAttribute("error", "error");
