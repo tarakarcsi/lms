@@ -10,7 +10,7 @@
     <h1>Register</h1>
   </header>
   <div class="center-box">
-  <form action="register">
+  <form action="register" method="post">
       <p>Enter your name:</p>
       <input name = "name" type="text" placeholder="Name" required/>
       <p>Enter your e-mail address:</p>

@@ -5,17 +5,12 @@
     <title>Login Page</title>
 </head>
 <body>
-<form action="login" >
+<form action="login" method="post" >
     <div class="center-box">
         <p>E-mail address</p>
-        <input name = "email" type="email" placeholder="Example@example.com"/>
+        <input type = "text" name = "email" type="email" placeholder="Example@example.com"/>
         <p>Password</p>
-        <input name = "password" type = "password"  placeholder="*****"/>
-        <p>Please select your status</p>
-        <select name = "type">
-            <option value="student">Student</option>
-            <option value="mentor">Mentor</option>
-        </select><br/>
+        <input type = "password" name = "password" type = "password"  placeholder="*****"/><br/>
         <button type="submit">Login</button><br/>
         <a href="register.jsp" class="button"> <h2>Click Here to Create an Account</h2></a>
     </div>

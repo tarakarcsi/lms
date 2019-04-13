@@ -10,7 +10,7 @@ public class User implements Serializable {
     private String password2;
     private boolean isMentor;
 
-    public User(String email, String name, String password, String password2, String type) {
+    public User(String name, String email, String password, String password2, String type) {
         this.email = email;
         this.name = name;
         this.password = password;
