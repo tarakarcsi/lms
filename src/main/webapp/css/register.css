@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background: url(background.jpg) top center no-repeat;
+    background: url(../images/background.jpg) top center no-repeat;
     color: #fff;
     background-size: cover;
     font-family: Verdana;

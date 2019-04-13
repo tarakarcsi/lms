@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background: #000 url(LoginBackground.png) top center no-repeat;
+    background: #000 url(../images/LoginBackground.png) top center no-repeat;
     color: #fff;
     background-size: cover;
     font-family: Verdana;
