@@ -1,7 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
-  background: url("image.png");
+  background: url(../images/image.png);
 }
 table {
   margin: 0 auto;

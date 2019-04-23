@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Page</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
   <header>
     <h1>Register</h1>
   </header>
   <div class="center-box">
-  <form action="register">
+  <form action="register" method="post">
       <p>Enter your name:</p>
       <input name = "name" type="text" placeholder="Name" required/>
       <p>Enter your e-mail address:</p>
@@ -33,6 +33,8 @@
       </select><br/>
       <button type="submit">Register</button>
   </form>
-</div>
+      <% out.println("SHIT"); %>
+      <h1 style="color: red;">${error}</h1>
+  </div>
 </body>
 </html>
