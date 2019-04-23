@@ -1,0 +1,11 @@
+html, body {
+    margin: 0 auto;
+}
+
+body {
+    background: url(../images/background.jpg) top center no-repeat;
+    color: #fff;
+    background-size: cover;
+    font-family: Verdana;
+    width: 100%;
+}
