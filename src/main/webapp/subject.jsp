@@ -7,13 +7,9 @@
 
 </head>
 <body>
-  <ul>
-  <c:forEach  items="${subjects}" var="subject">
-    <li>
-      <a href="content?title=${subject.getTitle()}">${subject.getTitle()}</a>
-    </li>
-  </c:forEach>
-  </ul>
+<c:set var="subject" scope = "session" value = "${subject}"/>
+<h2>${subject.getTitle()} </h2>
+<p>${subject.getContent()} </p>
 </body>
 
 </html>
