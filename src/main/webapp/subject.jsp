@@ -3,13 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Curriculum Page</title>
-
+    <title>Curriculum Page</title>
+    <link rel="stylesheet" href="css/subject.css">
 </head>
+<header>
+    <%@ include file="welcome.html" %>
+</header>
 <body>
-<c:set var="subject" scope = "session" value = "${subject}"/>
-<h2>${subject.getTitle()} </h2>
-<p>${subject.getContent()} </p>
+    <c:set var="subject" scope = "session" value = "${subject}"/>
+    <div  id="hero">
+        <h2>${subject.getTitle()} </h2>
+        <p>${subject.getContent()} </p>
+    </div>
 </body>
 
 </html>

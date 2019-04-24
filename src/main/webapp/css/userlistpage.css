@@ -1,7 +1,6 @@
 body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
-  background: url(../images/image.png);
+  background: url("https://images.homedepot-static.com/productImages/ffc4c2ab-ff7e-4222-9e99-b1ba9a529885/svn/york-wallcoverings-wallpaper-dy0246-64_300.jpg");
+  margin: 0px;
 }
 table {
   margin: 0 auto;
@@ -9,10 +8,13 @@ table {
   border-collapse: collapse;
   table-layout: fixed;
   width: 80%;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  font-weight: bold;
 }
 table caption {
   font-size: 48px;
-  color: #545151;
+  color: black;
   border-bottom: 2px solid gray;
   border-top: 2px solid gray;
   text-transform: uppercase;
@@ -35,7 +37,7 @@ table td {
   text-align: left;
 }
 table th {
-  background: #545151;
+  background: #333;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
