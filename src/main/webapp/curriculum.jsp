@@ -8,7 +8,7 @@
        <link rel="stylesheet" type="text/css" href="css/curriculum.css">
     </head>
     <header>
-        <%@ include file="welcome.html" %>
+        <%@ include file="welcome.jsp" %>
     </header>
     <body>
     <div id="caption">Curriculum</div>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/subject.css">
 </head>
 <header>
-    <%@ include file="welcome.html" %>
+    <%@ include file="welcome.jsp" %>
 </header>
 <body>
     <c:set var="subject" scope = "session" value = "${subject}"/>
