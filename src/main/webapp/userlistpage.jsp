@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/userlistpage.css">
 </head>
 <header>
-    <%@ include file="welcome.html" %>
+    <%@ include file="welcome.jsp" %>
 </header>
 <body>
 <table>

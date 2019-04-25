@@ -29,14 +29,23 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        List<User> userList = UserList.getInstance().getUserList();
+
         if (validateLogin(email, password)) {
             HttpSession oldSession = req.getSession(false);
             if (oldSession != null) {
                 oldSession.invalidate();
             }
+
             HttpSession newSession = req.getSession(true);
-            req.getSession().setAttribute("email", email);
             req.getSession().setAttribute("password", password);
+            req.getSession().setAttribute("email", email);
+            for (User user: userList) {
+                if(user.getEmail().equals(email))
+                {
+                    req.getSession().setAttribute("isMentor", user.isMentor());
+                }
+            }
             resp.sendRedirect("welcome.jsp");
 
         } else {

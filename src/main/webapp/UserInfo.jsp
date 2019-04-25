@@ -12,7 +12,9 @@
         }
     </script>
 </head>
-
+<header>
+    <%@ include file="welcome.jsp"%>
+</header>
 <body>
 <table width="400px" align="center" border=0>
     <tr style="background-color:Purple;">
