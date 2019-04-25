@@ -27,7 +27,6 @@
         <a id="logout" href="login.html" name="logout">Logout</a>
       </c:otherwise>
 </c:choose>
-
     </div>
     <div class = "name">
     </div>
