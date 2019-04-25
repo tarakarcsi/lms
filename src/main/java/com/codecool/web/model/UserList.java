@@ -23,4 +23,14 @@ public class UserList {
     public List<User> getUserList() {
         return userList;
     }
+
+    public User findUserByEmail(String email) {
+
+        for(User user : this.getUserList()) {
+            if(user.getEmail().equals(email)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }

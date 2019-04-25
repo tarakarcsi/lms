@@ -1,5 +1,7 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.model.Subject;
+import com.codecool.web.model.SubjectList;
 import com.codecool.web.model.User;
 import com.codecool.web.model.UserList;
 
@@ -8,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +26,23 @@ public class LoginServlet extends HttpServlet {
 
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         if (validateLogin(email, password)) {
-            resp.sendRedirect("welcome.html");
+            HttpSession oldSession = req.getSession(false);
+            if (oldSession != null) {
+                oldSession.invalidate();
+            }
+            HttpSession newSession = req.getSession(true);
+            req.getSession().setAttribute("email", email);
+            req.getSession().setAttribute("password", password);
+            resp.sendRedirect("welcome.jsp");
+
         } else {
             resp.sendRedirect("login.html");
         }
+
     }
 
     private boolean validateLogin(String email, String pwd) {

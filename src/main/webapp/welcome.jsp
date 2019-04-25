@@ -13,10 +13,14 @@
       <a href="#Profile">Profile</a>
       <a id = "curriculum" href="curriculum">Curriculum</a>
       <a id="logout" href="login.html" name="logout">Logout</a>
+      <c:set var="email" scope = "session" value = "${email}"/>
     </div>
     <div class = "name">
 
     </div>
   </form>
+  <p>
+          "${email}"
+      </p>
 </body>
 </html>
