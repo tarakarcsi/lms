@@ -14,7 +14,7 @@ public class UserInfoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         resp.sendRedirect("UserInfo.html");
-
-
+        req.getSession().getAttribute("name");
+        resp.sendRedirect("UserInfo.html");
     }
 }

@@ -10,15 +10,26 @@
 <body>
   <form action = "welcome.html" method = "get">
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="userlistpage">Users</a>
-      <a href="UserInfo">Profile</a>
-      <a id = "curriculum" href="curriculum">Curriculum</a>
-      <a id="logout" href="login.html" name="logout">Logout</a>
-      <c:set var="email" scope = "session" value = "${email}"/>
+      <c:choose>
+        <c:when test="${isMentor == false}">
+          <a class="active" href="#home">Home</a>
+          <a href="userlistpage">Users</a>
+          <a href="UserInfo">Profile</a>
+          <a id = "curriculum" href="curriculum">Curriculum</a>
+          <a id="logout" href="login.html" name="logout">Logout</a>
+      </c:when>
+      <c:otherwise>
+        <a class="active" href="#home">Home</a>
+        <a href="userlistpage">Users</a>
+        <a href="UserInfo">Profile</a>
+        <a id = "curriculum" href="curriculum">Curriculum</a>
+        <a id = "mentormenu" href="mentormenu">Mentor Menu</a>
+        <a id="logout" href="login.html" name="logout">Logout</a>
+      </c:otherwise>
+</c:choose>
+
     </div>
     <div class = "name">
-
     </div>
   </form>
   <p>
