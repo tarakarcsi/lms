@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
             for (User user: userList) {
                 if(user.getEmail().equals(email))
                 {
-                    req.getSession().setAttribute("isMentor", user.isMentor());
+                    req.getSession().setAttribute("user", user);
                 }
             }
             resp.sendRedirect("welcome.jsp");
