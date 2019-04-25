@@ -8,26 +8,23 @@
     <%@ include file="welcome.jsp"%>
 </header>
 <body>
-<table width="400px" border=0>
-    <tr style="background-color:Purple;">
-        <td align="center"><b>Name: ${user.getName()}</b></td>
-        <td align="center"><b>E-mail Address: ${user.getEmail()}</b></td>
-        <td align="center"><b>Role: <c:choose>
-                                         <c:when test="${user.isMentor()}">
-                                            <p>Mentor</p>
-                                         </c:when>
-                                         <c:otherwise>
-                                           <p>Student</p>
-                                         </c:otherwise>
-                                       </c:choose></b>
-        </td>
-    </tr>
-    <tr>
-        <td align="center"><div id="displayarea"></div></td>
-        <td align="center"><div id="displayarea1"></div></td>
-        <td align="center"><div id="asd"></div></td>
-        <td align="center"><div id="asdasd"></div></td>
-    </tr>
-</table>
+<div id="caption">Profile</div>
+<section id="profile">
+        <div id="profile-img">
+            <img src="images/IronProfile.jpg">
+        </div>
+        <p class="name">${user.getName()}</p>
+        <div id="profile-text">
+            <p class="email"> <strong>E-mail:${user.getEmail()}</strong> </p>
+            <p class="status"><strong>Role:<c:choose>
+                                                          <c:when test="${user.isMentor()}">
+                                                            Mentor
+                                                          </c:when>
+                                                          <c:otherwise>
+                                                            Student
+                                                          </c:otherwise>
+                                                       </c:choose></strong></p>
+        </div>
+    </section>
 </body>
 </html>
