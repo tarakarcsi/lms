@@ -39,16 +39,9 @@ h1 {
     font-size: 18px;
 }
 
-header {
-    width: 25%;
-    margin: 0 auto;
-}
-
 form {
-    width: 80%;
     text-align: center;
     margin: 0 auto;
-    padding-top: 10px;
 }
 
 form p {

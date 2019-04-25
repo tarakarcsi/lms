@@ -1,5 +1,7 @@
 package com.codecool.web.servlet;
 
+import com.codecool.web.model.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +15,13 @@ public class UserInfoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        resp.sendRedirect("UserInfo.html");
-        req.getSession().getAttribute("name");
-        resp.sendRedirect("UserInfo.html");
+        resp.sendRedirect("UserInfo.jsp");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User user = (User) req.getSession().getAttribute("user");
+        req.setAttribute("user", user);
+        resp.sendRedirect("UserInfo.jsp");
     }
 }

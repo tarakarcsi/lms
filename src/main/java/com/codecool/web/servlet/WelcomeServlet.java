@@ -21,5 +21,6 @@ public class WelcomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
 
+
     }
 }
