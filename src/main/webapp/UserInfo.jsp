@@ -16,9 +16,9 @@
     <%@ include file="welcome.jsp"%>
 </header>
 <body>
-<table width="400px" align="center" border=0>
+<table width="400px" border=0>
     <tr style="background-color:Purple;">
-        <td align="center"><b>First Name</b></td>
+        <td align="center"><b>First Name </b></td>
         <td align="center"><b>Last Name</b></td>
         <td align="center"><b>E-mail Address</b></td>
         <td align="center"><b>Role</b></td>

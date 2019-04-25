@@ -21,17 +21,5 @@
 
     </div>
   </form>
-  <p>
-          "${email}"
-          "${isMentor}"
-          "${password}"
-
-
-    <c:if test = "${isMentor == true}">
-       <p>My salary is:  <c:out value = "${email}"/><p>
-    </c:if>
-
-
-      </p>
 </body>
 </html>
