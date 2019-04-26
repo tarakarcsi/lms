@@ -27,6 +27,14 @@ public class User implements Serializable {
         this.isMentor = isMentor;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMentor(boolean mentor) {
+        isMentor = mentor;
+    }
+
     public String getPassword2() {
         return password2;
     }
