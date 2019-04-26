@@ -33,4 +33,8 @@ public class UserList {
         }
         return null;
     }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 }

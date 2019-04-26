@@ -22,8 +22,7 @@ public class Serializer {
         try {
             FileInputStream fiS = new FileInputStream("./users.ser");
             ObjectInputStream ois = new ObjectInputStream(fiS);
-            List<User> userList = UserList.getInstance().getUserList();
-            userList = (List<User>) ois.readObject();
+            List<User> userList = (List<User>) ois.readObject();
             ois.close();
             fiS.close();
             return userList;

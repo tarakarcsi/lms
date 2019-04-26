@@ -61,6 +61,7 @@ public class RegisterServlet extends HttpServlet {
         }catch (IOException io) {
             System.out.println(io.getMessage());
         }
+
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
