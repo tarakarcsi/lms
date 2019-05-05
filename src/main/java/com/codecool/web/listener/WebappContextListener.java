@@ -4,16 +4,24 @@ import com.codecool.web.model.Subject;
 import com.codecool.web.model.SubjectList;
 import com.codecool.web.model.UserList;
 import com.codecool.web.service.Serializer;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.init.ScriptUtils;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.sql.DataSource;
 import java.io.IOException;
+import java.sql.Connection;
 
 @WebListener
 public final class WebappContextListener implements ServletContextListener {
 
-    @Override
+    @Override/*
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("This method is invoked once when the webapp gets deployed.");
         SubjectList.getInstance().addSubject(new Subject("Berta", "Helpful, Goddess of Java, bitten by a radioactive computer, coding abilities give her amazing powers she uses tu help others", true));
@@ -37,7 +45,42 @@ public final class WebappContextListener implements ServletContextListener {
             e.printStackTrace();
         }
     }
+    */
 
+    public void contextInitialized(ServletContextEvent sce) {
+        registerCharacterEncodingFilter(sce);
+        DataSource dataSource = putDataSourceToServletContext(sce);
+        runDatabaseInitScript(dataSource, "/init.sql");
+    }
+
+
+    private DataSource putDataSourceToServletContext(ServletContextEvent sce) {
+        try {
+            Context initCtx = new InitialContext();
+            Context envCtx = (Context) initCtx.lookup("java:comp/env");
+            DataSource dataSource = (DataSource) envCtx.lookup("jdbc/lms");
+            ServletContext servletCtx = sce.getServletContext();
+            servletCtx.setAttribute("dataSource", dataSource);
+            return dataSource;
+        } catch (NamingException ex) {
+            ex.printStackTrace();
+            throw new IllegalStateException(ex);
+        }
+    }
+
+    private void registerCharacterEncodingFilter(ServletContextEvent sce) {
+        sce.getServletContext().addFilter("SetCharacterEncodingFilter", "org.apache.catalina.filters.SetCharacterEncodingFilter");
+    }
+
+
+    private void runDatabaseInitScript(DataSource dataSource, String resource) {
+        try (Connection connection = dataSource.getConnection()) {
+            ScriptUtils.executeSqlScript(connection, new ClassPathResource(resource));
+        } catch (Throwable t) {
+            t.printStackTrace();
+            throw new IllegalStateException(t);
+        }
+    }
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         Serializer serializer = new Serializer();

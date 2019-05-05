@@ -4,13 +4,15 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
+    private String userId;
     private String email;
     private String name;
     private String password;
     private String password2;
     private boolean isMentor;
 
-    public User(String name, String email, String password, String password2, String type) {
+    public User(String userId, String name, String email, String password, String password2, String type) {
+        this.userId = userId;
         this.email = email;
         this.name = name;
         this.password = password;
@@ -33,6 +35,10 @@ public class User implements Serializable {
 
     public void setMentor(boolean mentor) {
         isMentor = mentor;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public String getPassword2() {

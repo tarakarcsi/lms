@@ -16,7 +16,7 @@
     <a id = "curriculum" href="curriculum">Curriculum</a>
       <c:choose>
         <c:when test="${user.isMentor() == true}">
-            <a id = "mentormenu" href="mentormenu">Mentor Menu</a>
+            <a id = "mentormenu" href="#mentormenu">Mentor Menu</a>
       </c:when>
       </c:choose>
       <a id="logout" href="login.html" name="logout">Logout</a>
