@@ -22,4 +22,12 @@ public class UserService {
     public void insertUser(User user) {
         userDao.addUser(user);
     }
+
+    public boolean checkIfRegistered(String email, String password) {
+        return userDao.validateLogin(email, password);
+    }
+
+    public User findUser(String email) {
+        return userDao.getUser(email);
+    }
 }

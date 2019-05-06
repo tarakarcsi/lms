@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDao extends AbstractDao{
+public class UserDao extends AbstractDao {
 
 
     public UserDao(Connection connection) {
@@ -28,9 +28,8 @@ public class UserDao extends AbstractDao{
 
     public void addUser(User user) {
 
-        try(PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users(userId, name, email, password, role) VALUES (?,?,?,?,?);")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users(name, email, password, role) VALUES (?,?,?,?);")) {
 
-            preparedStatement.setString(1, user.getUserId());
             preparedStatement.setString(2, user.getName());
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.setString(4, user.getPassword());
@@ -41,30 +40,50 @@ public class UserDao extends AbstractDao{
         }
     }
 
+    public User getUser(String email) {
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE email = '" + email + "'")) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String newEmail = resultSet.getString("email");
+                if (newEmail.equals(email)) {
+                    String name = resultSet.getString("name");
+                    String password = resultSet.getString("password");
+                    Boolean role = resultSet.getBoolean("role");
+
+                    return new User(name, newEmail, password, role);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        throw new NullPointerException();
+    }
+
     public User fetchUser(ResultSet rs) throws SQLException {
-        String userId = rs.getString("userId");
         String name = rs.getString("name");
         String email = rs.getString("email");
         String password = rs.getString("password");
-        Boolean role = Boolean.valueOf(rs.getString("type"));
+        Boolean role = rs.getBoolean("role");
 
 
-        return new User(userId, name,email, password, role);
+        return new User(name, email, password, role);
 
     }
 
     public boolean validateLogin(String email, String password) {
 
-        try(Statement statement = connection.createStatement()) {
+        try (Statement statement = connection.createStatement()) {
             String sql = "SELECT * FROM users WHERE email = '" + email + "'";
             ResultSet resultSet = statement.executeQuery(sql);
 
-            while(resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
+            while (resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
                 return true;
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } ;
+        }
         return false;
     }
 }

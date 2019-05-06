@@ -31,15 +31,14 @@ public class LoginServlet extends AbstractServlet {
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        try(Connection connection = getConnection(req.getServletContext())) {
+        try (Connection connection = getConnection(req.getServletContext())) {
 
             UserDao userDao = new UserDao(connection);
             UserService userService = new UserService(userDao);
             String email = req.getParameter("email");
             String password = req.getParameter("password");
-            List<User> userList = userService.getUsers();
 
-            if (validateLogin(email, password)) {
+            if (userService.checkIfRegistered(email, password)) {
                 HttpSession oldSession = req.getSession(false);
                 if (oldSession != null) {
                     oldSession.invalidate();
@@ -48,32 +47,19 @@ public class LoginServlet extends AbstractServlet {
                 HttpSession newSession = req.getSession(true);
                 req.getSession().setAttribute("password", password);
                 req.getSession().setAttribute("email", email);
-                for (User user : userList) {
-                    if (user.getEmail().equals(email)) {
-                        req.getSession().setAttribute("user", user);
-                    }
-                }
-                resp.sendRedirect("welcome.jsp");
 
+                User newUser = userService.findUser(email);
+                if (newUser.getEmail().equals(email)) {
+                    req.getSession().setAttribute("user", newUser);
+                    resp.sendRedirect("welcome.jsp");
+                }
             } else {
-                resp.sendRedirect("login.html");
+                req.getRequestDispatcher("login.html").forward(req, resp);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
-    }
 
-    private boolean validateLogin(String email, String pwd) {
-        UserDao userDao = new UserDao(connection);
-        UserService userService = new UserService(userDao);
-        List<User> userList = userService.getUsers();
-        for (User user : UserList.getInstance().getUserList()) {
-            if (user.getEmail().equals(email)) {
-                if (user.getPassword().equals(pwd)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+
     }
 }
