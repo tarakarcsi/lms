@@ -23,6 +23,14 @@ public class User implements Serializable {
             this.isMentor = true;
     }
 
+    public User(String userId, String email, String name, String password, boolean isMentor) {
+        this.userId = userId;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.isMentor = isMentor;
+    }
+
     public User(String email, String password, boolean isMentor) {
         this.email = email;
         this.password = password;
