@@ -1,4 +1,13 @@
 package com.codecool.web.database.dao;
 
-public class UserDao {
+import java.sql.Connection;
+
+public class UserDao extends AbstractDao{
+
+
+    UserDao(Connection connection) {
+        super(connection);
+    }
+
+
 }
