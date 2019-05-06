@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS subjects CASCADE;
+DROP TABLE IF EXISTS assignments CASCADE;
 
 
 CREATE TABLE users
@@ -20,18 +21,18 @@ CREATE TABLE subjects
     isPublished BOOLEAN
 );
 
-CREATE TABLE assignment
+CREATE TABLE assignments
 (
     assignmentId   VARCHAR(30) PRIMARY KEY,
     title       VARCHAR(40),
     content     TEXT,
-    maxScore    INT(3),
+    maxScore    INT,
     isPublished BOOLEAN
 );
 
 
 INSERT INTO users(userId, name, email, password, role)
-VALUES ('lali', 'Pinaszaggatoh', 'lhofstadter@caltech.edu', 'lalivagyok69', 'mentor');
+VALUES ('lali', 'Pinaszaggatoh', 'lhofstadter@caltech.edu', 'Lalivagyok69', 'mentor');
 INSERT INTO users(userId, name, email, password, role)
 VALUES ('sheldon', 'Sheldon Cooper', 'lhofstadter@caltech.edu', 'SheldonCooper123', 'student');
 INSERT INTO users(userId, name, email, password, role)

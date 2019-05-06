@@ -64,6 +64,9 @@ public class LoginServlet extends AbstractServlet {
     }
 
     private boolean validateLogin(String email, String pwd) {
+        UserDao userDao = new UserDao(connection);
+        UserService userService = new UserService(userDao);
+        List<User> userList = userService.getUsers();
         for (User user : UserList.getInstance().getUserList()) {
             if (user.getEmail().equals(email)) {
                 if (user.getPassword().equals(pwd)) {

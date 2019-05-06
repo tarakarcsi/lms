@@ -52,4 +52,19 @@ public class UserDao extends AbstractDao{
         return new User(userId, name,email, password, role);
 
     }
+
+    public boolean validateLogin(String email, String password) {
+
+        try(Statement statement = connection.createStatement()) {
+            String sql = "SELECT * FROM users WHERE email = '" + email + "'";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while(resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } ;
+        return false;
+    }
 }
