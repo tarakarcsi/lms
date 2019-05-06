@@ -2,10 +2,7 @@ package com.codecool.web.database.dao;
 
 import com.codecool.web.model.User;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +24,21 @@ public class UserDao extends AbstractDao{
             }
         }
         return users;
+    }
+
+    public void addUser(User user) {
+
+        try(PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users(userId, name, email, password, role) VALUES (?,?,?,?,?);")) {
+
+            preparedStatement.setString(1, user.getUserId());
+            preparedStatement.setString(2, user.getName());
+            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(4, user.getPassword());
+            preparedStatement.setBoolean(5, Boolean.valueOf(user.isMentor()));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public User fetchUser(ResultSet rs) throws SQLException {

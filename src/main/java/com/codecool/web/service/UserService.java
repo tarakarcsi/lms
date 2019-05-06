@@ -18,4 +18,8 @@ public class UserService {
     public List<User> getUsers() throws SQLException {
         return userDao.findUsers();
     }
+
+    public void insertUser(User user) {
+        userDao.addUser(user);
+    }
 }
