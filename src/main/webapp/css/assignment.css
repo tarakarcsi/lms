@@ -6,9 +6,8 @@ html, body {
 }
 
 body {
-    background: #000 url(../images/LoginBackground.png) top center no-repeat;
-    color: #fff;
-    background-size: cover;
+    background: url(../images/Welcome.jpg);
+    margin: 0px;
     font-family: Verdana;
     width: 100%;
 }
@@ -22,9 +21,9 @@ input {
     padding: 15px;
 }
 button {
-    margin: 45px 0;
+    margin: 45px 15px;
     width: 20%;
-    background: #db6414;
+    background: #333;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -35,12 +34,12 @@ button {
 }
 
 button:hover {
-    background: #fff;
-    color: #db6414;
+    background: #191f45;
+    color: white;
 }
 
 .center-box {
-    width: 1140px;
+    width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
@@ -70,20 +69,7 @@ form input[type="email"], input[type="password"], input[type = "text"]{
     font-size: inherit;
 }
 
-select {
-    color: #000;
-    padding: 10px;
-}
 
-a {
-    color: white;
-    text-decoration: none !important;
-}
 
-a:hover {
-    color: #db6414;
-    text-decoration: none !important;
-    text-shadow: 2px 2px #ff0000;
-}
 
 
