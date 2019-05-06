@@ -37,7 +37,7 @@ public class LoginServlet extends AbstractServlet {
             UserService userService = new UserService(userDao);
             String email = req.getParameter("email");
             String password = req.getParameter("password");
-            List<User> userList = UserList.getInstance().getUserList();
+            List<User> userList = userService.getUsers();
 
             if (validateLogin(email, password)) {
                 HttpSession oldSession = req.getSession(false);
