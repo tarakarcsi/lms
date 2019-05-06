@@ -1,15 +1,19 @@
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS subjects CASCADE;
+
+
 CREATE TABLE users (
-    userId VARCHAR(6) PRIMARY KEY,
-    name VARCHAR(20),
-    email VARCHAR(40)
-    password VARCHAR(20),
+    userId VARCHAR(30) PRIMARY KEY,
+    name VARCHAR(40),
+    email VARCHAR(40),
+    password VARCHAR(40),
     role VARCHAR(10)
 );
 
 
 CREATE TABLE subjects(
-    subjectId VARCHAR(6) PRIMARY KEY;
-    title VARCHAR(30);
+    subjectId VARCHAR(30) PRIMARY KEY,
+    title VARCHAR(40),
     content TEXT,
     isPublished BOOLEAN
 );
