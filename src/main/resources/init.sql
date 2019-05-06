@@ -19,7 +19,7 @@ CREATE TABLE subjects(
 );
 
 
-
+INSERT INTO users(userId, name, email, password, role) VALUES ('lali', 'Pinaszaggatoh', 'lhofstadter@caltech.edu', 'lalivagyok69', 'mentor');
 INSERT INTO users(userId, name, email, password, role) VALUES ('sheldon', 'Sheldon Cooper', 'lhofstadter@caltech.edu', 'SheldonCooper123', 'student');
 INSERT INTO users(userId, name, email, password, role) VALUES ('howard', 'Howard Wolovitz', 'lhofstadter@caltech.edu', 'HowardWoloviz123', 'student');
 INSERT INTO users(userId, name, email, password, role) VALUES ('raj','Raj Koothrappali', 'lhofstadter@caltech.edu', 'RajKoothrappali123', 'student');
