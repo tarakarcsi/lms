@@ -37,8 +37,8 @@ public class SubjectDao extends AbstractDao {
 
             while (resultSet.next()) {
 
-                String content = resultSet.getString("password");
-                Boolean isPublished = resultSet.getBoolean("role");
+                String content = resultSet.getString("content");
+                Boolean isPublished = resultSet.getBoolean("isPublished");
 
                 return new Subject(title, content, isPublished);
             }

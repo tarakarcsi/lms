@@ -35,6 +35,5 @@ public class CurriculumServlet extends AbstractServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }
