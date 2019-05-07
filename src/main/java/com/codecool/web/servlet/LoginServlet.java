@@ -43,20 +43,20 @@ public class LoginServlet extends AbstractServlet {
                 if (oldSession != null) {
                     oldSession.invalidate();
                 }
-
+                System.out.println("eljut");
                 HttpSession newSession = req.getSession(true);
                 req.getSession().setAttribute("password", password);
                 req.getSession().setAttribute("email", email);
 
                 User newUser = userService.findUser(email);
-                if (newUser.getEmail().equals(email)) {
-                    req.getSession().setAttribute("user", newUser);
-                    resp.sendRedirect("welcome.jsp");
-                }
+                req.getSession().setAttribute("user", newUser);
+                resp.sendRedirect("welcome.jsp");
+
             } else {
                 req.getRequestDispatcher("login.html").forward(req, resp);
             }
-        } catch (SQLException ex) {
+        } catch (
+            SQLException ex) {
             ex.printStackTrace();
         }
 

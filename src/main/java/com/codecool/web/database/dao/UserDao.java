@@ -26,14 +26,15 @@ public class UserDao extends AbstractDao {
         return users;
     }
 
-    public void addUser(User user) {
+    public void addUser(User user) throws SQLException {
 
         try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users(name, email, password, role) VALUES (?,?,?,?);")) {
 
-            preparedStatement.setString(2, user.getName());
-            preparedStatement.setString(3, user.getEmail());
-            preparedStatement.setString(4, user.getPassword());
-            preparedStatement.setBoolean(5, Boolean.valueOf(user.isMentor()));
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getEmail());
+            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setBoolean(4, user.isMentor());
+            executeInsert(preparedStatement);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,23 +43,28 @@ public class UserDao extends AbstractDao {
 
     public User getUser(String email) {
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE email = '" + email + "'")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE email = ?")) {
+            preparedStatement.setString(1, email);
+
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                String newEmail = resultSet.getString("email");
-                if (newEmail.equals(email)) {
-                    String name = resultSet.getString("name");
-                    String password = resultSet.getString("password");
-                    Boolean role = resultSet.getBoolean("role");
 
-                    return new User(name, newEmail, password, role);
-                }
+                String name = resultSet.getString("name");
+                String password = resultSet.getString("password");
+                Boolean role = resultSet.getBoolean("role");
+
+                return new User(name, email, password, role);
+
             }
-        } catch (SQLException e) {
+        } catch (
+            SQLException e) {
             e.printStackTrace();
         }
-        throw new NullPointerException();
+        throw new
+
+            NullPointerException();
+
     }
 
     public User fetchUser(ResultSet rs) throws SQLException {
@@ -78,8 +84,10 @@ public class UserDao extends AbstractDao {
             String sql = "SELECT * FROM users WHERE email = '" + email + "'";
             ResultSet resultSet = statement.executeQuery(sql);
 
-            while (resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
-                return true;
+            while (resultSet.next()) {
+                if(resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
+                    return true;
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

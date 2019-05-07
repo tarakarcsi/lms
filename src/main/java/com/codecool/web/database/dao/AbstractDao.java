@@ -17,7 +17,6 @@ abstract class AbstractDao {
     AbstractDao(Connection connection) {
         this.connection = connection;
     }
-    /*
     void executeInsert(PreparedStatement statement) throws SQLException {
         int insertCount = statement.executeUpdate();
         if (insertCount != 1) {
@@ -39,6 +38,6 @@ abstract class AbstractDao {
         connection.commit();
         return id;
     }
-    */
+
 
 }

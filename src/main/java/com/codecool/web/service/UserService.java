@@ -19,7 +19,7 @@ public class UserService {
         return userDao.findUsers();
     }
 
-    public void insertUser(User user) {
+    public void insertUser(User user) throws SQLException {
         userDao.addUser(user);
     }
 
