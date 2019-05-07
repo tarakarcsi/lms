@@ -62,9 +62,7 @@ public class UserDao extends AbstractDao {
             e.printStackTrace();
         }
         throw new
-
             NullPointerException();
-
     }
 
     public User fetchUser(ResultSet rs) throws SQLException {

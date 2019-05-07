@@ -14,6 +14,12 @@ public class Subject {
         this.subjectId = subjectId;
     }
 
+    public Subject(String title, String content, boolean isPublished) {
+        this.title = title;
+        this.content = content;
+        this.isPublished = isPublished;
+    }
+
     public String getTitle() {
         return title;
     }
