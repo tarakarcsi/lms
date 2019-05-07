@@ -43,6 +43,7 @@ public class LoginServlet extends AbstractServlet {
                 if (oldSession != null) {
                     oldSession.invalidate();
                 }
+
                 System.out.println("eljut");
                 HttpSession newSession = req.getSession(true);
                 req.getSession().setAttribute("password", password);
