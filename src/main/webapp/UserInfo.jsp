@@ -13,7 +13,7 @@
               <img src="images/IronProfile.jpg"></div>
               <form action="UserInfo" method="post">
                 <label>Name:
-                  <input type="text" name="name" value="${user.name}"></label>
+                  <input type="text" name="name" value="${user.name}" style="padding: 3px; border-radius: 10px;"></label>
                   <br>
                     <br>
                       <div id="profile-text">

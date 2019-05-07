@@ -14,7 +14,7 @@
     <a href="userlistpage">Users</a>
     <a href="UserInfo">Profile</a>
     <a id = "curriculum" href="curriculum">Curriculum</a>
-    <a id = "assignment" href="#">Assignment</a>
+    <a id = "assignment" href="assignment.html">Assignment</a>
       <c:choose>
         <c:when test="${user.isMentor() == true}">
           <div class="dropdown">
