@@ -13,18 +13,17 @@
     <%@ include file="welcome.jsp" %>
 </header>
 <div class="center-box" >
+    <form action="addSubject" method="post">
     <input placeholder="Curriculum Title...">
 </div>
 <div class="center-box">
-    <h1>
-    </h1>
     <textarea placeholder="Create curriculum page..." cols="70" rows="10"></textarea>
 </div>
 <div class="center-box">
     <button type="submit">Publish now</button>
     <button type="submit">Publish later</button><br/>
+    </form>
 </div>
-
 </body>
 </html>
 
