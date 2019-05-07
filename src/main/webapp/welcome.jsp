@@ -14,9 +14,17 @@
     <a href="userlistpage">Users</a>
     <a href="UserInfo">Profile</a>
     <a id = "curriculum" href="curriculum">Curriculum</a>
+    <a id = "assignment" href="#">Assignment</a>
       <c:choose>
         <c:when test="${user.isMentor() == true}">
-            <a id = "mentormenu" href="#mentormenu">Mentor Menu</a>
+          <div class="dropdown">
+            <button class="dropbtn">Mentor Menu</button>
+          <div class="dropdown-content">
+            <a href="#">Create Assignment</a>
+            <a href="#">Attendance</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
       </c:when>
       </c:choose>
       <a id="logout" href="login.html" name="logout">Logout</a>
