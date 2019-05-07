@@ -10,7 +10,7 @@ import java.util.List;
 public class SubjectDao extends AbstractDao {
 
 
-    SubjectDao(Connection connection) {
+    public SubjectDao(Connection connection) {
         super(connection);
     }
 
