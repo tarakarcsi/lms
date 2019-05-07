@@ -8,13 +8,11 @@
     <meta charset="UTF-8">
     <title>Assignment</title>
 </head>
+<body>
 <header>
     <%@ include file="welcome.jsp" %>
 </header>
-<body>
 <div class="center-box" >
-    <h2>
-    </h2>
     <input placeholder="Curriculum Title...">
 </div>
 <div class="center-box">

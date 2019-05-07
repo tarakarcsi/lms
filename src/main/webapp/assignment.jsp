@@ -7,13 +7,12 @@
     <meta charset="UTF-8">
     <title>Assignment</title>
 </head>
+<body>
 <header>
     <%@ include file="welcome.jsp" %>
 </header>
-<body>
+<caption id="caption">Assignment</caption>
 <div class="center-box" >
-    <h2>
-    </h2>
     <input placeholder="Assignment title...">
 </div>
 <div class="center-box">

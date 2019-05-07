@@ -69,6 +69,19 @@ form input[type="email"], input[type="password"], input[type = "text"]{
     font-size: inherit;
 }
 
+#caption {
+    font-size: 48px;
+    color: black;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: verdana;
+    margin: 20px auto;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 30%;
+}
 
 
 
