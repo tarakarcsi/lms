@@ -16,7 +16,7 @@ public class SubjectDao extends AbstractDao {
 
     public void addSubject(Subject subject) {
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO subjets(title, content, isPublished) VALUES (?,?,?);")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO subjects(title, content, isPublished) VALUES (?,?,?);")) {
             preparedStatement.setString(1, subject.getTitle());
             preparedStatement.setString(2, subject.getContent());
             preparedStatement.setBoolean(3, subject.isPublished());
@@ -47,6 +47,7 @@ public class SubjectDao extends AbstractDao {
         }
         throw new NullPointerException();
     }
+
 
     public List<Subject> getSubjects() {
         List<Subject> subjects = new ArrayList<>();

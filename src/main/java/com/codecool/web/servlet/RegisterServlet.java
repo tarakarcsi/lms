@@ -56,11 +56,8 @@ public class RegisterServlet extends AbstractServlet {
             if (password1.equals(password2)) {
                 User newUser = new User(name, email, password1, isMentor);
                 userService.insertUser(newUser);
-                System.out.println("bejöttem");
-                //UserList.getInstance().addUser(new User(name, email, password1, password2, isMentor));
                 resp.sendRedirect("login.html");
                 save();
-                //es.sendEmail();
             } else {
                 req.setAttribute("error", "error");
             }

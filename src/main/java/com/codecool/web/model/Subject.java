@@ -2,7 +2,7 @@ package com.codecool.web.model;
 
 public class Subject {
 
-    private String subjectId;
+    private int subjectId;
     private String title;
     private String content;
     private boolean isPublished;
@@ -11,13 +11,14 @@ public class Subject {
         this.title = title;
         this.content = content;
         this.isPublished = isPublished;
-        this.subjectId = subjectId;
+        this.subjectId = 0;
     }
 
     public Subject(String title, String content, boolean isPublished) {
         this.title = title;
         this.content = content;
         this.isPublished = isPublished;
+        this.subjectId = 0;
     }
 
     public String getTitle() {
@@ -32,7 +33,7 @@ public class Subject {
         return isPublished;
     }
 
-    public String getSubjectId() {
+    public int getSubjectId() {
         return subjectId;
     }
 }
