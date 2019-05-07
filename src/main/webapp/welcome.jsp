@@ -14,15 +14,15 @@
     <a href="userlistpage">Users</a>
     <a href="UserInfo">Profile</a>
     <a id = "curriculum" href="curriculum">Curriculum</a>
-    <a id = "assignment" href="assignment.html">Assignment</a>
+    <a id = "assignment" href="assignment.jsp">Assignment</a>
       <c:choose>
         <c:when test="${user.isMentor() == true}">
           <div class="dropdown">
             <button class="dropbtn">Mentor Menu</button>
           <div class="dropdown-content">
             <a href="#">Create Assignment</a>
+            <a href="addCurriculum.jsp">Add Curriculum</a>
             <a href="#">Attendance</a>
-            <a href="#">Link 3</a>
           </div>
         </div>
       </c:when>
