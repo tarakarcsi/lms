@@ -32,19 +32,19 @@ CREATE TABLE assignments
 
 
 INSERT INTO users(name, email, password, role)
-VALUES ('Pinaszaggatoh', 'lhofstadter@caltech.edu', 'Lalivagyok69', true);
+VALUES ('Pinaszaggatoh', '1lhofstadter@caltech.edu', 'Lalivagyok69', true);
 INSERT INTO users(name, email, password, role)
-VALUES ('Sheldon Cooper', 'lhofstadter@caltech.edu', 'SheldonCooper123', false);
+VALUES ('Sheldon Cooper', '2lhofstadter@caltech.edu', 'SheldonCooper123', false);
 INSERT INTO users(name, email, password, role)
-VALUES ('Howard Wolovitz', 'lhofstadter@caltech.edu', 'HowardWoloviz123', false);
+VALUES ('Howard Wolovitz', '3lhofstadter@caltech.edu', 'HowardWoloviz123', false);
 INSERT INTO users(name, email, password, role)
-VALUES ('Raj Koothrappali', 'lhofstadter@caltech.edu', 'RajKoothrappali123', false);
+VALUES ('Raj Koothrappali', '4lhofstadter@caltech.edu', 'RajKoothrappali123', false);
 INSERT INTO users(name, email, password, role)
-VALUES ('Penny', 'lhofstadter@caltech.edu', 'Penny1234', false);
+VALUES ('Penny', '5lhofstadter@caltech.edu', 'Penny1234', false);
 INSERT INTO users(name, email, password, role)
-VALUES ('Bernadette Rostenkowski', 'lhofstadter@caltech.edu', 'BernadetteRostenkowski123', false);
+VALUES ('Bernadette Rostenkowski', '6lhofstadter@caltech.edu', 'BernadetteRostenkowski123', false);
 INSERT INTO users(name, email, password, role)
-VALUES ('Amy Farrah Fowler', 'lhofstadter@caltech.edu', 'AmyFarrahFowler123', false);
+VALUES ('Amy Farrah Fowler', '7lhofstadter@caltech.edu', 'AmyFarrahFowler123', false);
 
 
 INSERT INTO subjects(title, content, isPublished)

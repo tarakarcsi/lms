@@ -11,7 +11,7 @@ import java.util.List;
 public class AssignmentDao extends AbstractDao {
 
 
-    AssignmentDao(Connection connection) {
+    public AssignmentDao(Connection connection) {
         super(connection);
     }
 

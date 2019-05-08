@@ -20,18 +20,10 @@ public class WelcomeServlet extends AbstractServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try(Connection connection = getConnection(req.getServletContext())) {
-
-            UserDao userDao = new UserDao(connection);
-            UserService userService = new UserService(userDao);
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-
-            req.getRequestDispatcher("welcome.jsp").forward(req, resp);
-
-        } ;
+        resp.setContentType("text/html");
+        User user = (User) req.getSession().getAttribute("user");
+        req.getSession().setAttribute("user", user);
+        req.getRequestDispatcher("welcome.jsp").forward(req, resp);
 
     }
 

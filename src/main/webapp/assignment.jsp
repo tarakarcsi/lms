@@ -22,7 +22,7 @@
                       </div>
                       <div class="center-box">
                         <p class="status" style="height: 100px;">
-                          <input placeholder="Max score" style="margin-bottom: 30px;">
+                          <input type="text" name="maxScore" placeholder="Max score" style="margin-bottom: 30px;">
                             <br>
                               <strong>Status:
                                 <c:choose>
