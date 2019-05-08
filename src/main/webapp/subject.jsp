@@ -12,8 +12,10 @@
 <body>
     <c:set var="subject" scope = "session" value = "${subject}"/>
     <div  id="hero">
-        <h2>${subject.getTitle()} </h2>
-        <p>${subject.getContent()} </p>
+        <c:if test="${subject.isPublished()}">
+            <h2>${subject.getTitle()} </h2>
+            <p>${subject.getContent()} </p>
+        </c:if>
     </div>
 </body>
 

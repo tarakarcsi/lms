@@ -14,9 +14,11 @@
     <div id="caption">Curriculum</div>
       <ul>
           <c:forEach  items="${subjects}" var="subject">
+          <c:if test="${subject.isPublished()}">
             <li>
               <a href="content?title=${subject.getTitle()}">${subject.getTitle()}</a>
             </li>
+            </c:if>
           </c:forEach>
       </ul>
     </body>
