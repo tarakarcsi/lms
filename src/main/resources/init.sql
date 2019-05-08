@@ -33,9 +33,10 @@ CREATE TABLE assignments
 
 CREATE TABLE attendance
 (
-    name VARCHAR(40),
     currentDate VARCHAR(30),
-    present VARCHAR(20)
+    present VARCHAR(20),
+    userId INT references users(userId)
+
 );
 
 INSERT INTO users(name, email, password, role)

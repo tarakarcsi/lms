@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class AttendanceDao extends AbstractDao{
 
-    AttendanceDao(Connection connection) {
+    public AttendanceDao(Connection connection) {
         super(connection);
     }
 
@@ -25,10 +25,10 @@ public class AttendanceDao extends AbstractDao{
         }
     }
 
-    public void changeAttendance(String name, String date, String present) {
+    public void changeAttendance(int userid, String date, String present) {
         try (PreparedStatement preparedStatement =
                  connection.prepareStatement("UPDATE attendance SET date = ?, present =?" +
-                     "WHERE name = '" + name + "'")) {
+                     "WHERE userId = '" + userid + "'")) {
             preparedStatement.setString(1, date);
             preparedStatement.setString(2, present);
             executeInsert(preparedStatement);

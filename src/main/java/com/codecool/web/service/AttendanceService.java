@@ -15,7 +15,7 @@ public class AttendanceService {
         attendanceDao.addAttendance(attendance);
     }
 
-    public void updateAttendance(String name, String date, String present) {
-        attendanceDao.changeAttendance(name, date, present);
+    public void updateAttendance(int userID, String date, String present) {
+        attendanceDao.changeAttendance(userID, date, present);
     }
 }
