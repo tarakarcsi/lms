@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
       <title>Users</title>
-      <link rel="stylesheet" href="css/userlistpage.css"></head>
+      <link rel="stylesheet" href="css/userlistpage.css">
+      </head>
       <header>
         <%@ include file="welcome.jsp" %>
         </header>

@@ -51,3 +51,24 @@ table td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.center-box {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#attendanceSubmit {
+    padding: 17px;
+    width: 15%;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #333;
+    color: white;
+}
+
+#attendanceSubmit:hover {
+   background: #999;
+   color: black;
+}

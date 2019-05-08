@@ -34,7 +34,6 @@ public class AttendanceServlet extends AbstractServlet {
             UserDao userDao = new UserDao(connection);
             UserService userService = new UserService(userDao);
             List<User> users = userService.getUsers();
-            //Attendance attendance = new Attendance();
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY - MM - dd");
             Date date = new Date();
