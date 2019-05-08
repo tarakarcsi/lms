@@ -29,12 +29,12 @@
                                   <option value="false">Student</option>
                                   </select>
                                 </c:when>
-                                <c:when test="${!user.isMentor()}">
+                                <c:otherwise>
                                   <select name="role">
-                                  <option value="false">Mentor</option>
-                                  <option value="true" selected="selected">Student</option>
+                                  <option value="false" selected="selected">Student</option>
+                                  <option value="true">Mentor</option>
                                 </select>
-                                </c:when>
+                                </c:otherwise>
                               </c:choose>
                           </strong>
                         </p>
