@@ -83,7 +83,7 @@ public class UserDao extends AbstractDao {
             ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
-                if(resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
+                if (resultSet.getString("email").equals(email) && resultSet.getString("password").equals(password)) {
                     return true;
                 }
             }
@@ -91,5 +91,21 @@ public class UserDao extends AbstractDao {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public void changeUserInfo(String name, boolean role, String email) {
+        try (PreparedStatement preparedStatement =
+                 connection.prepareStatement("UPDATE users SET  name = ? role=?" +
+                     "WHERE email =?;")) {
+            preparedStatement.setString(1, name);
+            preparedStatement.setBoolean(2, role);
+            preparedStatement.setString(3, email);
+
+            executeInsert(preparedStatement);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

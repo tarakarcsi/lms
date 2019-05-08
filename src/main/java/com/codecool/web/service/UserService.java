@@ -30,4 +30,8 @@ public class UserService {
     public User findUser(String email) {
         return userDao.getUser(email);
     }
+
+    public void updateUser(String name, boolean role, String email) {
+            userDao.changeUserInfo(name, role, email);
+    }
 }
