@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/welcome.css">
 </head>
 <body>
-  <form action = "welcome.jsp" method = "get">
     <div class="topnav">
     <a class="active" href="#home">Home</a>
     <a href="userlistpage">Users</a>
     <a href="UserInfo">Profile</a>
     <a id = "curriculum" href="curriculum">Curriculum</a>
     <a id = "assignment" href="#">Assignment</a>
+    <form action = "welcome.jsp" method = "get">
       <c:choose>
         <c:when test="${user.isMentor() == true}">
           <div class="dropdown">
