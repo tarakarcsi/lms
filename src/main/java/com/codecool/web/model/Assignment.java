@@ -15,6 +15,13 @@ public class Assignment {
         this.isPublished = isPublished;
     }
 
+    public Assignment(String title, String content, int maxScore, boolean isPublished) {
+        this.title = title;
+        this.content = content;
+        this.maxScore = maxScore;
+        this.isPublished = isPublished;
+    }
+
     public String getId() {
         return id;
     }
