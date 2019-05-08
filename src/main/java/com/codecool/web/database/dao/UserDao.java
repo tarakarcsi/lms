@@ -95,14 +95,11 @@ public class UserDao extends AbstractDao {
 
     public void changeUserInfo(String name, boolean role, String email) {
         try (PreparedStatement preparedStatement =
-                 connection.prepareStatement("UPDATE users SET  name = ? role=?" +
-                     "WHERE email =?;")) {
+                 connection.prepareStatement("UPDATE users SET name = ?, role =?" +
+                     "WHERE email = '" + email + "'")) {
             preparedStatement.setString(1, name);
             preparedStatement.setBoolean(2, role);
-            preparedStatement.setString(3, email);
-
             executeInsert(preparedStatement);
-
 
         } catch (SQLException e) {
             e.printStackTrace();

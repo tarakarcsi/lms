@@ -32,6 +32,6 @@ public class UserService {
     }
 
     public void updateUser(String name, boolean role, String email) {
-            userDao.changeUserInfo(name, role, email);
+        userDao.changeUserInfo(name, role, email);
     }
 }
