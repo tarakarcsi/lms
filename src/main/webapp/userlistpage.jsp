@@ -35,36 +35,6 @@
         </tr>
         <% } %>
     </form>
-    <tr>
-        <td scope="row">Sheldon Cooper</td>
-        <td>lhofstadter@caltech.edu</td>
-        <td>Student</td>
-    </tr>
-    <tr>
-        <td scope="row">Howard Wolowitz</td>
-        <td>lhofstadter@caltech.edu</td>
-        <td>Student</td>
-    </tr>
-    <tr>
-        <td scope="row">Raj Koothrappali</td>
-        <td>lhofstadter@caltech.edu</td>
-        <td>Student</td>
-    </tr>
-    <tr>
-        <td scope="row">Penny</td>
-        <td>lhofstadter@caltech.edu</td>
-        <td>Student</td>
-    </tr>
-    <tr>
-        <td scope="row">Bernadette Rostenkowski</td>
-        <td>lhofstadter@caltech.edu</td>
-        <td>Student</td>
-    </tr>
-    <tr>
-        <td scope="row">Amy Farrah Fowler</td>
-        <td>lhofstadter@caltech.edu</td>
-        <td>Student</td>
-    </tr>
     </tbody>
 </table>
 </body>

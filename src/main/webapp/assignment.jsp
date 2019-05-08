@@ -41,7 +41,7 @@
                                 </c:choose>
                                 <br>
                                   <div class="center-box">
-                                    <button type="submit">Submit</button>
+                                    <button type="submit" class="submit">Submit</button>
                                   </strong>
                                 </div>
                               </p>
