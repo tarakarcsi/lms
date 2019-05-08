@@ -30,6 +30,12 @@ CREATE TABLE assignments
     isPublished BOOLEAN
 );
 
+CREATE TABLE attendance
+(
+    name VARCHAR(40),
+    currentDate VARCHAR(30),
+    present VARCHAR(20)
+);
 
 INSERT INTO users(name, email, password, role)
 VALUES ('Pinaszaggatoh', '1lhofstadter@caltech.edu', 'Lalivagyok69', true);
