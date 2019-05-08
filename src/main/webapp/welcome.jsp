@@ -20,7 +20,7 @@
                       <button class="dropbtn">Mentor Menu</button>
                       <div class="dropdown-content">
                         <a href="assignment.jsp">Create Assignment</a>
-                        <a href="addCurriculum">Add Curriculum</a>
+                        <a href="addCurriculum.jsp">Add Curriculum</a>
                         <a href="#">Attendance</a>
                       </div>
                     </div>
