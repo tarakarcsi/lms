@@ -21,7 +21,7 @@
                       <div class="dropdown-content">
                         <a href="assignment.jsp">Create Assignment</a>
                         <a href="addCurriculum.jsp">Add Curriculum</a>
-                        <a href="#">Attendance</a>
+                        <a href="attendance.jsp">Attendance</a>
                       </div>
                     </div>
                   </c:when>
