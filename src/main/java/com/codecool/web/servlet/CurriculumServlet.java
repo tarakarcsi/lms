@@ -3,6 +3,7 @@ package com.codecool.web.servlet;
 import com.codecool.web.database.dao.SubjectDao;
 import com.codecool.web.model.Subject;
 import com.codecool.web.model.SubjectList;
+import com.codecool.web.model.User;
 import com.codecool.web.service.SubjectService;
 
 import javax.servlet.ServletException;
@@ -30,7 +31,9 @@ public class CurriculumServlet extends AbstractServlet {
             SubjectDao subjectDao = new SubjectDao(connection);
             SubjectService subjectService = new SubjectService(subjectDao);
             List<Subject> subjectList = subjectService.findSubjects();
+            User user =  (User) req.getSession().getAttribute("user");
             req.setAttribute("subjects", subjectList);
+            req.setAttribute("user", user);
             req.getRequestDispatcher("curriculum.jsp").forward(req, resp);
         } catch (SQLException e) {
             e.printStackTrace();

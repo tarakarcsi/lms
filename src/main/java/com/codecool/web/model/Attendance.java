@@ -29,4 +29,8 @@ public class Attendance {
     public String getPresent() {
         return present;
     }
+
+    public void setPresent(String present) {
+        this.present = present;
+    }
 }

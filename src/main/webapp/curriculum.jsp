@@ -13,12 +13,19 @@
     <body>
     <div id="caption">Curriculum</div>
       <ul>
-          <c:forEach  items="${subjects}" var="subject">
-          <c:if test="${subject.isPublished()}">
-            <li>
-              <a href="content?title=${subject.getTitle()}">${subject.getTitle()}</a>
-            </li>
-            </c:if>
+          <c:forEach items="${subjects}" var="subject">
+              <c:choose>
+                  <c:when test="${(!subject.isPublished() || subject.isPublished()) && user.isMentor()}">
+                      <li>
+                          <a href="assign?title=${subject.getTitle()}">${subject.getTitle()}</a>
+                      </li>
+                  </c:when>
+                  <c:when test="${subject.isPublished() && !user.isMentor()}">
+                      <li>
+                          <a href="assign?title=${subject.getTitle()}">${subject.getTitle()}</a>
+                      </li>
+                  </c:when>
+              </c:choose>
           </c:forEach>
       </ul>
     </body>

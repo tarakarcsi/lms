@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.sql.Date;
 import java.util.List;
@@ -23,41 +24,29 @@ public class AttendanceServlet extends AbstractServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try (Connection connection = getConnection(req.getServletContext())) {
-            Date date = Date.valueOf(req.getParameter("currentDate"));
-            String[] array = req.getParameterValues("presence");
-            AttendanceDao attendanceDao = new AttendanceDao(connection);
-            AttendanceService attendanceService = new AttendanceService(attendanceDao);
-            UserDao userDao = new UserDao(connection);
-            UserService userService = new UserService(userDao);
-            for (String element : array) {
-                String present = element.split(",")[0];
-                int id = Integer.parseInt(element.split(",")[1]);
-                attendanceService.insertAttendance(new Attendance(userService.findUserById(id), date, present));
-            }
-            /*for(User user : userList) {
-                attendanceService.insertAttendance(new Attendance(user, date, req.getParameter("presence")));
-            }
-            doGet(req, resp);*/
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try (Connection connection = getConnection(req.getServletContext())) {
+        try(Connection connection = getConnection(req.getServletContext())) {
             AttendanceDao attendanceDao = new AttendanceDao(connection);
             AttendanceService attendanceService = new AttendanceService(attendanceDao);
             UserDao userDao = new UserDao(connection);
             UserService userService = new UserService(userDao);
-            List<Attendance> attendance = attendanceService.findAllAttendance();
-            List<User> userList = userService.getUsers();
-            req.setAttribute("users", userList);
+            List<User> users = userService.getUsers();
+            for (User user : users) {
+                System.out.println(user.getName());
+            }
+
             SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY - MM - dd");
-            req.setAttribute("attendanceList", attendance);
+            Date date = new Date(System.currentTimeMillis());
+            String dateString =  dateFormat.format(date);
+            req.setAttribute("date", dateString);
+            req.setAttribute("users", users);
             req.getRequestDispatcher("attendance.jsp").forward(req, resp);
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

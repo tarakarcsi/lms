@@ -28,8 +28,8 @@
       </div>
       <p>Select your status:</p>
       <select name = "type">
-        <option value="student">Student</option>
-        <option value="mentor">Mentor</option>
+        <option value="false">Student</option>
+        <option value="true">Mentor</option>
       </select><br/>
       <button type="submit">Register</button>
   </form>
