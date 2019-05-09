@@ -33,8 +33,10 @@ public class CreateSubjectServlet extends AbstractServlet {
 
             String title = req.getParameter("title");
             String content = req.getParameter("content");
+            boolean isPublished = Boolean.valueOf(req.getParameter("status"));
 
-            Subject newSubject = new Subject(title, content, false);
+
+            Subject newSubject = new Subject(title, content, isPublished);
             subjectService.insertSubject(newSubject);
             req.setAttribute("subject", newSubject);
             req.getRequestDispatcher("addCurriculum.jsp").forward(req,resp);

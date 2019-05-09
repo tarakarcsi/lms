@@ -30,7 +30,7 @@
                               </select>
                             </c:when>
                             <c:when test="${!subject.isPublished()}">
-                              <select name="role">
+                              <select name="status">
                                 <option value="false">Unpublished</option>
                                 <option value="true" selected="selected">Published</option>
                               </select>

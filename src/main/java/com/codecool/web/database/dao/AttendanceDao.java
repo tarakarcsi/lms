@@ -60,7 +60,7 @@ public class AttendanceDao extends AbstractDao {
     public List<Attendance> getAllAttendance() {
         List<Attendance> attendanceList = new ArrayList<>();
 
-        String sql = "SELECT * FROM attendance JOIN users ON attendance.userId=users.userId";
+        String sql = "SELECT * FROM attendance  LEFT JOIN users ON attendance.userId=users.userId";
         try(Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(sql);
             while(resultSet.next()) {

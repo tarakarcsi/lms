@@ -35,8 +35,10 @@ public class AttendanceServlet extends AbstractServlet {
                 int id = Integer.parseInt(element.split(",")[1]);
                 attendanceService.insertAttendance(new Attendance(userService.findUserById(id), date, present));
             }
-
-            doGet(req, resp);
+            /*for(User user : userList) {
+                attendanceService.insertAttendance(new Attendance(user, date, req.getParameter("presence")));
+            }
+            doGet(req, resp);*/
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -51,7 +53,8 @@ public class AttendanceServlet extends AbstractServlet {
             UserDao userDao = new UserDao(connection);
             UserService userService = new UserService(userDao);
             List<Attendance> attendance = attendanceService.findAllAttendance();
-
+            List<User> userList = userService.getUsers();
+            req.setAttribute("users", userList);
             SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY - MM - dd");
             req.setAttribute("attendanceList", attendance);
             req.getRequestDispatcher("attendance.jsp").forward(req, resp);
