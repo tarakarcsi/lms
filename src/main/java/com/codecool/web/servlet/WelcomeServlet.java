@@ -24,6 +24,7 @@ public class WelcomeServlet extends AbstractServlet {
         User user = (User) req.getSession().getAttribute("user");
         req.getSession().setAttribute("user", user);
         req.getRequestDispatcher("welcome.jsp").forward(req, resp);
+
     }
 
     @Override
