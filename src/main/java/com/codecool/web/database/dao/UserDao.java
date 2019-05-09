@@ -105,4 +105,28 @@ public class UserDao extends AbstractDao {
             e.printStackTrace();
         }
     }
+    public User getUserById(int userId) {
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE userId = ?")) {
+            preparedStatement.setInt(1, userId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                String email = resultSet.getString("email");
+                String name = resultSet.getString("name");
+                String password = resultSet.getString("password");
+                Boolean role = resultSet.getBoolean("role");
+
+                return new User(name, email, password, role);
+
+            }
+        } catch (
+            SQLException e) {
+            e.printStackTrace();
+        }
+        throw new
+            NullPointerException();
+    }
 }
