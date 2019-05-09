@@ -33,8 +33,9 @@ public class AssignmentServlet extends AbstractServlet{
             String title = req.getParameter("title");
             String content = req.getParameter("content");
             int maxScore = Integer.parseInt(req.getParameter("maxScore"));
+            boolean published = Boolean.valueOf(req.getParameter("status"));
 
-            Assignment newAssignment = new Assignment(title, content, maxScore, false);
+            Assignment newAssignment = new Assignment(title, content, maxScore, published);
             assignmentService.insertAssignment(newAssignment);
             req.setAttribute("assignment", newAssignment);
             //req.getRequestDispatcher("viewAssignmentPage.jsp").forward(req,resp);

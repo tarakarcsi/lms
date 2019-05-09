@@ -25,23 +25,14 @@
                           <input type="text" name="maxScore" placeholder="Max score" style="margin-bottom: 30px;">
                             <br>
                               <strong>Status:
-                                <c:choose>
-                                  <c:when test="${assignment.isPublished()}">
                                     <select name="status">
-                                      <option value="true" selected="selected">Published</option>
                                       <option value="false">Unpublished</option>
+                                      <option value="true">Published</option>
                                     </select>
-                                  </c:when>
-                                  <c:when test="${!assignment.isPublished()}">
-                                    <select name="role">
-                                      <option value="false">Unpublished</option>
-                                      <option value="true" selected="selected">Published</option>
-                                    </select>
-                                  </c:when>
-                                </c:choose>
                                 <br>
                                   <div class="center-box">
                                     <button type="submit" class="submit">Submit</button>
+                                  </div>
                                   </strong>
                                 </div>
                               </p>

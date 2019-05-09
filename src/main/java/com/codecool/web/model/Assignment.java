@@ -19,7 +19,7 @@ public class Assignment {
         this.title = title;
         this.content = content;
         this.maxScore = maxScore;
-        this.isPublished = true;
+        this.isPublished = isPublished;
     }
 
     public String getId() {
