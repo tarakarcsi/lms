@@ -59,4 +59,5 @@ public class AttendanceServlet extends AbstractServlet {
             e.printStackTrace();
         }
     }
+
 }
