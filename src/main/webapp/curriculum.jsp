@@ -17,12 +17,12 @@
               <c:choose>
                   <c:when test="${(!subject.isPublished() || subject.isPublished()) && user.isMentor()}">
                       <li>
-                          <a href="assign?title=${subject.getTitle()}">${subject.getTitle()}</a>
+                          <a href="content?title=${subject.getTitle()}">${subject.getTitle()}</a>
                       </li>
                   </c:when>
                   <c:when test="${subject.isPublished() && !user.isMentor()}">
                       <li>
-                          <a href="assign?title=${subject.getTitle()}">${subject.getTitle()}</a>
+                          <a href="content?title=${subject.getTitle()}">${subject.getTitle()}</a>
                       </li>
                   </c:when>
               </c:choose>

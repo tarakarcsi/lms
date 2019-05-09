@@ -12,7 +12,7 @@
     </header>
     <body>
         <div id="caption">Assignments</div>
-            <ul>
+            <ul style="width: 50%; margin: 0 auto;">
             <c:forEach items="${assignments}" var="assignment">
                 <c:choose>
                     <c:when test="${(!assignment.isPublished() || assignment.isPublished()) && user.isMentor()}">
