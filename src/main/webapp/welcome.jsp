@@ -12,7 +12,7 @@
               <a href="userlistpage">Users</a>
               <a href="UserInfo">Profile</a>
               <a id="curriculum" href="curriculum">Curriculum</a>
-              <a id="assignment" href="assignmentView.jsp">Assignments</a>
+              <a id="assignment" href="assignmentView">Assignments</a>
               <form action="welcome.jsp" method="get">
                 <c:choose>
                   <c:when test="${user.isMentor() == true}">

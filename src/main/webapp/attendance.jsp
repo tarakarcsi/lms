@@ -24,7 +24,7 @@
                     <%@ page import="java.util.List" %>
                       <%@ page import="com.codecool.web.model.User" %>
                         <%@ page import="com.codecool.web.model.Attendance" %>
-                          <% List<User> userList = (List<User>) request.getAttribute("users"); %>
+                        <% List<User> users = (List<User>) request.getAttribute("users"); %>
                             <% List<Attendance> attendanceList = (List<Attendance>) request.getAttribute("attendanceList"); %>
                               <% String date = (String) request.getAttribute("date"); %>
                                 <% for(Attendance attendance : attendanceList) { %>

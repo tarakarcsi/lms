@@ -16,7 +16,7 @@
     <c:forEach  items="${assignments}" var="assignment">
         <c:if test="${assignment.isPublished()}">
             <li>
-                <a href="content?title=${assingment.getTitle()}">${assingment.getTitle()}</a>
+                <a href="content?title=${assignment.getTitle()}">${assignment.getTitle()}</a>
             </li>
         </c:if>
     </c:forEach>
