@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+@WebServlet("/assign")
 public class AssignmentSubjectServlet extends AbstractServlet {
 
     @Override
