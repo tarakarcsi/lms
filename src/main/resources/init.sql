@@ -33,7 +33,7 @@ CREATE TABLE assignments
 
 CREATE TABLE attendance
 (
-    currentDate VARCHAR(30),
+    currentDate TEXT,
     present VARCHAR(20),
     userId INT references users(userId)
 
@@ -53,6 +53,8 @@ INSERT INTO users(name, email, password, role)
 VALUES ('Bernadette Rostenkowski', '6lhofstadter@caltech.edu', 'BernadetteRostenkowski123', false);
 INSERT INTO users(name, email, password, role)
 VALUES ('Amy Farrah Fowler', '7lhofstadter@caltech.edu', 'AmyFarrahFowler123', false);
+
+
 
 
 INSERT INTO subjects(title, content, isPublished)

@@ -3,7 +3,7 @@ package com.codecool.web.model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 public class Attendance {
     private User user;
@@ -22,7 +22,7 @@ public class Attendance {
 
     public String getDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY - MM - dd");
-        Date date = new Date();
+        Date date = new Date(System.currentTimeMillis());
         return dateFormat.format(date);
     }
 
