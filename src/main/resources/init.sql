@@ -107,3 +107,9 @@ VALUES ('Rocket',
         true);
 
 
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Marvel era beginning?',
+        'The Marvel era began in 1961', 80,
+        true);
+
+
