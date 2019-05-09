@@ -43,5 +43,6 @@ public class AssignmentServlet extends AbstractServlet{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 }
