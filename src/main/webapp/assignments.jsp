@@ -10,13 +10,20 @@
     <%@ include file="welcome.jsp" %>
 </header>
 <body>
-<c:set var="assignment" scope = "session" value = "${assignment}"/>
-<div  id="hero">
-    <c:if test="${assignment.isPublished()}">
-        <h2>${assignment.getTitle()} </h2>
-        <p>${assignment.getContent()} </p>
-    </c:if>
-</div>
+    <c:set var="assignment" scope = "session" value = "${assignment}"/>
+    <div  id="hero">
+        <c:if test="${assignment.isPublished()}">
+            <h2 id="h2">${assignment.getTitle()} </h2>
+        </c:if>
+    </div>
+    <div class="center-boxI">
+        <textarea id="tarea" name="content" placeholder="Write your answer..." cols="70" rows="10"></textarea>
+    </div>
+        <strong>
+            <div class="center-boxII">
+                <button id="aButton" type="submit" class="submit">Submit</button>
+            </div>
+        </strong>
+    </div>
 </body>
-
 </html>
