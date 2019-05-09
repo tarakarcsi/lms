@@ -24,39 +24,43 @@
                     <%@ page import="java.util.List" %>
                       <%@ page import="com.codecool.web.model.User" %>
                         <%@ page import="com.codecool.web.model.Attendance" %>
-                          <% List<Attendance> attendanceList = (List<Attendance>) request.getAttribute("attendanceList"); %>
+                          <% List<User> users = (List<User>) request.getAttribute("users"); %>
                             <% String date = (String) request.getAttribute("date"); %>
-                              <% for(Attendance attendance : attendanceList) { %>
-                                <% if(!attendance.getUser().isMentor()) { %>
+                              <% for(User user : users) { %>
+                                <% if(!user.isMentor()) { %>
                                   <tr>
-                                    <td scope="row"><%=attendance.getUser().getName()%></td>
-                                  <%}%>
-                                  <td><%=attendance.getDate()%></td>
+                                    <td scope="row"><%=user.getName()%></td>
+                                  <td><%=date%></td>
                                   <td style="text-align: center;">
-                                    <input name = "currentDate" type = "hidden" value = "${attendance.getDate()}">
-                                    <c:choose>
-                                      <c:when test="${attendance.getPresent() == 'Present'}">
-                                        <select style="width: 70%" name="presence">
-                                          <option value="Present,"+"${attendance.getUser().getUserId()}" selected="selected">Present</option>
-                                          <option value="Not Present,"+"${attendance.getUser().getUserId()}">Not Present</option>
-                                          <option value="Late,"+"${attendance.getUser().getUserId()}">Late</option>
+                                    <select style="width: 70%">
+                                      <option value="volvo">Present</option>
+                                      <option value="opel">Not Present</option>
+                                      <option value="mercedes">Late</option>
+                                    </select>
+                                  <%}%>
+                                    <%-- <c:choose>
+                                      <c:when test="${attendance.getPresent().equals("Present")}">
+                                        <select name="presence">
+                                          <option value="Present" selected="selected">Present</option>
+                                          <option value="Not Present">Not Present</option>
+                                          <option value="Late">Late</option>
                                         </select>
                                       </c:when>
-                                      <c:when test="${attendance.getPresent() == 'Not Present'}">
-                                        <select style="width: 70%" name="presence">
-                                          <option value="Present,"+"${attendance.getUser().getUserId()}">Present</option>
-                                          <option value="Not Present,"+"${attendance.getUser().getUserId()}" selected="selected">Not Present</option>
-                                          <option value="Late,"+"${attendance.getUser().getUserId()}">Late</option>
+                                      <c:when test="${attendance.getPresent().equals("Not Present")}">
+                                        <select name="presence">
+                                          <option value="Present">Present</option>
+                                          <option value="Not Present" selected="selected">Not Present</option>
+                                          <option value="Late">Late</option>
                                         </select>
                                       </c:when>
-                                      <c:when test="${attendance.getPresent() == 'Late'}">
-                                        <select style="width: 70%" name="presence">
-                                          <option value="Present,"+"${attendance.getUser().getUserId()}">Present</option>
-                                          <option value="Not Present,"+"${attendance.getUser().getUserId()}">Not Present</option>
-                                          <option value="Late,"+"${attendance.getUser().getUserId()}" selected="selected">Late</option>
+                                      <c:when test="${attendance.getPresent().equals("Late")}">
+                                        <select name="presence">
+                                          <option value="Present">Present</option>
+                                          <option value="Not Present">Not Present</option>
+                                          <option value="Late" selected="selected">Late</option>
                                         </select>
                                       </c:when>
-                                    </c:choose>
+                                    </c:choose> --%>
                                   </td>
                                 <%}%>
                               </tr>
