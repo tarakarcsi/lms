@@ -38,6 +38,19 @@ button:hover {
     color: white;
 }
 
+button.csubmit {
+    margin: 45px 15px;
+    width: 20%;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
 .center-box {
     width: 1000px;
     margin: 0 auto;

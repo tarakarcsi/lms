@@ -12,14 +12,15 @@
               <header>
                 <%@ include file="welcome.jsp" %>
                 </header>
-                <div class="center-box">
+                <div id="caption">Curriculum</div>
+                <div class="center-box" style="padding-bottom: 20px;">
                   <form action="addSubject" method="post">
                     <input name="title" placeholder="Curriculum Title..."><br></div>
                     <div class="center-box">
                       <textarea name="content" placeholder="Create curriculum page..." cols="70" rows="10"></textarea>
                     </div>
                     <div class="center-box">
-                      <p class="status">
+                      <p class="status" style="padding-top: 15px; margin-bottom: 0px;">
                         <strong>Status:
                           <c:choose>
                             <c:when test="${subject.isPublished()}">
@@ -38,7 +39,7 @@
                         </strong>
                       </p>
                       <div class="center-box">
-                        <button type="submit">Submit</button>
+                        <button class="csubmit" type="submit">Submit</button>
                       </div>
                     </form>
                   </div>
