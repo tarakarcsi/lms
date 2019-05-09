@@ -2,6 +2,7 @@ package com.codecool.web.servlet;
 
 import com.codecool.web.database.dao.AssignmentDao;
 import com.codecool.web.model.Assignment;
+import com.codecool.web.model.User;
 import com.codecool.web.service.AssignmentService;
 
 import javax.servlet.ServletException;
@@ -26,6 +27,8 @@ public class AssignmentViewServlet extends AbstractServlet {
             AssignmentService assignmentService = new AssignmentService(assignmentDao);
 
             List<Assignment> assignments = assignmentService.findAssignments();
+            User user = (User) req.getSession().getAttribute("user");
+            req.setAttribute("user", user);
             req.setAttribute("assignments", assignments);
             req.getRequestDispatcher("assignmentView.jsp").forward(req,resp);
             //resp.sendRedirect("assignmentView.jsp");

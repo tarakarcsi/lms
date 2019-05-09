@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Curriculum Page</title>
+        <title>Assignment Page</title>
         <link rel="stylesheet" type="text/css" href="css/curriculum.css">
     </head>
     <header>
@@ -14,11 +14,18 @@
         <div id="caption">Assignments</div>
             <ul>
             <c:forEach items="${assignments}" var="assignment">
-                <c:if test="${assignment.isPublished()}">
-                    <li>
-                        <a href="assign?title=${assignment.getTitle()}">${assignment.getTitle()}</a>
-                    </li>
-                </c:if>
+                <c:choose>
+                    <c:when test="${(!assignment.isPublished() || assignment.isPublished()) && user.isMentor()}">
+                        <li>
+                            <a href="assign?title=${assignment.getTitle()}">${assignment.getTitle()}</a>
+                        </li>
+                    </c:when>
+                    <c:when test="${assignment.isPublished() && !user.isMentor()}">
+                        <li>
+                            <a href="assign?title=${assignment.getTitle()}">${assignment.getTitle()}</a>
+                        </li>
+                    </c:when>
+                </c:choose>
             </c:forEach>
             </ul>
     </body>
