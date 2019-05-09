@@ -24,10 +24,8 @@ public class ContentServlet extends AbstractServlet {
         try(Connection connection = getConnection(req.getServletContext())) {
             SubjectDao subjectDao = new SubjectDao(connection);
             SubjectService subjectService = new SubjectService(subjectDao);
-            List<Subject> subjectList = subjectService.findSubjects();
             String title = req.getParameter("title");
             Subject subject = subjectService.findSubject(title);
-            System.out.println(subject.getTitle());
             req.setAttribute("subject", subject);
             req.getRequestDispatcher("subject.jsp").forward(req, resp);
         } catch (SQLException e) {
