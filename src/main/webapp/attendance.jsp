@@ -33,11 +33,34 @@
                                   <%}%>
                                   <td><%=date%></td>
                                   <td style="text-align: center;">
-                                    <select style="width: 70%">
+                                    <%-- <select style="width: 70%">
                                       <option value="volvo">Present</option>
                                       <option value="opel">Not Present</option>
                                       <option value="mercedes">Late</option>
-                                    </select>
+                                    </select> --%>
+                                    <c:choose>
+                                      <c:when test="${attendance.getPresent().equals("Present")}">
+                                        <select name="presence">
+                                          <option value="Present" selected="selected">Present</option>
+                                          <option value="Not Present">Not Present</option>
+                                          <option value="Late">Late</option>
+                                        </select>
+                                      </c:when>
+                                      <c:when test="${attendance.getPresent().equals("Not Present")}">
+                                        <select name="presence">
+                                          <option value="Present">Present</option>
+                                          <option value="Not Present" selected="selected">Not Present</option>
+                                          <option value="Late">Late</option>
+                                        </select>
+                                      </c:when>
+                                      <c:when test="${attendance.getPresent().equals("Late")}">
+                                        <select name="presence">
+                                          <option value="Present">Present</option>
+                                          <option value="Not Present">Not Present</option>
+                                          <option value="Late" selected="selected">Late</option>
+                                        </select>
+                                      </c:when>
+                                    </c:choose>
                                   </td>
                                 <%}%>
                               </tr>
