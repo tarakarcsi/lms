@@ -25,7 +25,7 @@ CREATE TABLE subjects
 CREATE TABLE assignments
 (
     assignmentId serial PRIMARY KEY,
-    title       VARCHAR(40),
+    title       TEXT,
     content     TEXT,
     maxScore    INT,
     isPublished BOOLEAN
@@ -107,9 +107,56 @@ VALUES ('Rocket',
         true);
 
 
+
 INSERT INTO assignments (title, content, maxScore, isPublished)
 VALUES ('Marvel era beginning?',
         'The Marvel era began in 1961', 80,
         true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('How many stand-alone Iron Man films are there?',
+        '3', 10,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Can You Name The Actor Who Plays Thanos?',
+        'Josh Brolin', 70,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Which Character Is Not An Avenger In The First Film?',
+        'Falcon', 15,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Can You Name The Actor Who Plays Thanos?',
+        'Josh Brolin', 60,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Who Is The Villain Of The First Avengers Film?',
+        'Loki', 25,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Which Avenger Created Ultron?',
+        'Iron Man', 35,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Who is Tony Stark based on?',
+        'Howard Hughes', 95,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Which Avenger Does Loki Control In The First Avengers Film?',
+        'Calcutta', 52,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('How is Captain Marvel, who only gained a portion of the power of the Tesseract, stronger than Vision, who had all the powers of an Infinity Stone?',
+        'Cuz Im Batmaaan', 100,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('Which Character Left The Team In Age Of Ultron?',
+        'Hulk', 97,
+        true);
+INSERT INTO assignments (title, content, maxScore, isPublished)
+VALUES ('What does J.A.R.V.I.S. stand for?',
+        'Just A Rather Very Intelligent System', 81,
+        true);
+
+
 
 
